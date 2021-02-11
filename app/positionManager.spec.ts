@@ -6,6 +6,7 @@ test("geolocation initialized", () => {
   manager.startup();
 
   expect(geolocation.watchPosition).toHaveBeenCalledTimes(1);
+  expect(manager.watchId).not.toBeUndefined();
 });
 
 test("geolocation shutdown", () => {

@@ -47,6 +47,15 @@
       "js",
       "jsx"
     ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "<rootDir>/app/tsconfig.json"
+      }
+    },
+    "moduleNameMapper": {
+      "appbit": "<rootDir>/app/__mocks__/appbit.ts",
+      "geolocation": "<rootDir>/__mocks__/geolocation.ts"
+    },
     "testRegex": ".*\\.(test|spec)\\.(t|j)sx?$",
     "clearMocks": true,
     "restoreMocks": true,

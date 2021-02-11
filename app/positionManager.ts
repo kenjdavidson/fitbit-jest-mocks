@@ -1,13 +1,18 @@
 import { geolocation, PositionError } from "geolocation";
+import { me } from "appbit";
 
 export class PositionManager {
   watchId?: number;
 
   constructor() {}
 
-  startup = () =>
-    (this.watchId = geolocation.watchPosition(this.onPosition, this.onError));
-  shutdown = () => this.watchId && geolocation.clearWatch(this.watchId);
+  startup = () => {
+    this.watchId = geolocation.watchPosition(this.onPosition, this.onError);
+  };
+
+  shutdown = () => {
+    this.watchId && geolocation.clearWatch(this.watchId);
+  };
 
   onPosition = (position: Position) =>
     console.log(`Got Position: `, JSON.stringify(position.coords));
