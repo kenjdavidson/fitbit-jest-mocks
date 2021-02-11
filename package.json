@@ -1,0 +1,55 @@
+{
+  "name": "fitbit-jest-mocks",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.1",
+    "@fitbit/sdk-cli": "^1.7.3",
+    "@types/jest": "^26.0.20",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.1",
+    "typescript": "^4.1.5"
+  },
+  "fitbit": {
+    "appUUID": "61800777-1e51-4bbd-bf3a-a0c44138b354",
+    "appType": "app",
+    "appDisplayName": "Fitbit Jest Mocks",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [
+      "access_location",
+      "run_background"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit",
+    "test": "jest"
+  },
+  "dependencies": {
+    "fitbit-sdk-types": "^6.0.3",
+    "simple-fitbit-settings": "^3.1.0"
+  },
+  "jest": {
+    "transform": {
+      ".(t|j)sx?": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "testRegex": ".*\\.(test|spec)\\.(t|j)sx?$",
+    "clearMocks": true,
+    "restoreMocks": true,
+    "testEnvironment": "node"
+  }
+}
